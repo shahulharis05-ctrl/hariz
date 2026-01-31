@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background: #333;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    font-size: 20px;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #ccc;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00aaff;
+}
+
+/* HERO SECTION */
+.hero {
+    background: #555;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.hero-text button {
+    background: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+
+.hero-image img {
+    width: 25%;
+    float: right;
+}
+
+/* ABOUT SECTION */
+.about {
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about-image img {
+    width: 50%;
+    height: auto;
+    background :transparent;
+    display: block;
+}
+
+.about-text {
+    max-width: 55%;
+}
+
+.about-text h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.download {
+    background: #1e90ff;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+<div class="social-links">
+  <a href="https://www.instagram.com/yourusername" target="_blank" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://www.linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</div>
+.social-links i {
+  font-size: 450px;
+  transition: 0.3s ease;
+}
+
+.social-links i:hover {
+  transform: scale(1.2);
+}
+.social-links i {
+  font-size: 40px !important;
+}
