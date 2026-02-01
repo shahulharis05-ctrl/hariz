@@ -5,7 +5,6 @@
     font-family: Arial, sans-serif;
 }
 
-/* HEADER */
 header {
     background: #333;
     color: white;
@@ -35,10 +34,9 @@ nav a:hover {
     color: #00aaff;
 }
 
-/* HERO SECTION */
 .hero {
     background: #555;
-    padding: 60px 40px;
+    padding: 0px 40px;
     display: flex;
     align-items: center;
 }
@@ -70,9 +68,8 @@ nav a:hover {
     float: right;
 }
 
-/* ABOUT SECTION */
 .about {
-    padding: 60px 40px;
+    padding: 0px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -126,4 +123,25 @@ nav a:hover {
 }
 .social-links i {
   font-size: 40px !important;
+
+}
+.fa-instagram {
+  font-size: 40px;
+  background: radial-gradient(circle at 30% 110%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285AEB 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.linkedin i {
+  font-size: 40px;
+  color: #0A66C2;   
+  transition: 0.3s ease;
+}
+
+.linkedin i:hover {
+  transform: scale(1.2);
 }
