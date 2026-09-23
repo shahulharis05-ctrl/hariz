@@ -15,869 +15,940 @@ content="Haris Mohamed - Computer Science and Business Systems student and aspir
 
 <style>
 
-/* =====================================================
-   THEME VARIABLES
-===================================================== */
-
-:root {
-  --bg: #05070d;
-  --card: #0b0f18;
-  --card2: #0d111c;
-  --text: #f5f7ff;
-  --muted: #9299ac;
-  --soft: #b9bfd1;
-  --border: #1d2331;
-
-  --primary: #6f7fff;
-  --secondary: #bd8cff;
-  --glow: rgba(111,127,255,.30);
-}
-
-/* BLUE */
-body.theme-blue {
-  --primary: #4f8cff;
-  --secondary: #7b61ff;
-  --glow: rgba(79,140,255,.35);
-}
-
-/* PURPLE */
-body.theme-purple {
-  --primary: #a855f7;
-  --secondary: #ec4899;
-  --glow: rgba(168,85,247,.35);
-}
-
-/* GREEN */
-body.theme-green {
-  --primary: #22c55e;
-  --secondary: #06b6d4;
-  --glow: rgba(34,197,94,.35);
-}
-
-/* ORANGE */
-body.theme-orange {
-  --primary: #ff8a3d;
-  --secondary: #ff4d6d;
-  --glow: rgba(255,138,61,.35);
-}
-
-/* RED */
-body.theme-red {
-  --primary: #ef4444;
-  --secondary: #f97316;
-  --glow: rgba(239,68,68,.35);
-}
-
-/* LIGHT MODE */
-
-body.light {
-  --bg: #f5f7fb;
-  --card: #ffffff;
-  --card2: #f0f3f9;
-  --text: #111827;
-  --muted: #5f6878;
-  --soft: #374151;
-  --border: #dce1eb;
-}
-
-/* =====================================================
-   RESET
-===================================================== */
+/* ==============================
+   BASIC
+============================== */
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg: #05070d;
+    --card: #0b0f18;
+    --card2: #101521;
+    --text: #f5f7ff;
+    --muted: #9299ac;
+    --border: #202638;
+
+    --primary: #6f7fff;
+    --secondary: #bd8cff;
+    --glow: rgba(111,127,255,0.30);
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-  transition: background .35s, color .35s;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: 0.3s;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* =====================================================
+/* ==============================
+   THEMES
+============================== */
+
+body.blue {
+    --primary: #4f8cff;
+    --secondary: #38bdf8;
+    --glow: rgba(79,140,255,0.35);
+}
+
+body.purple {
+    --primary: #a855f7;
+    --secondary: #ec4899;
+    --glow: rgba(168,85,247,0.35);
+}
+
+body.green {
+    --primary: #22c55e;
+    --secondary: #06b6d4;
+    --glow: rgba(34,197,94,0.35);
+}
+
+body.orange {
+    --primary: #ff8a3d;
+    --secondary: #ff4d6d;
+    --glow: rgba(255,138,61,0.35);
+}
+
+body.red {
+    --primary: #ef4444;
+    --secondary: #f97316;
+    --glow: rgba(239,68,68,0.35);
+}
+
+/* ==============================
+   LIGHT MODE
+============================== */
+
+body.light {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --card2: #eef1f7;
+    --text: #111827;
+    --muted: #5f6878;
+    --border: #dce1eb;
+}
+
+/* ==============================
    BACKGROUND
-===================================================== */
+============================== */
 
 body::before {
-  content: "";
-  position: fixed;
-  width: 500px;
-  height: 500px;
-  top: -200px;
-  left: -200px;
-  background: var(--primary);
-  opacity: .08;
-  filter: blur(120px);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    top: -180px;
+    left: -180px;
+    background: var(--primary);
+    opacity: 0.08;
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
 }
 
 body::after {
-  content: "";
-  position: fixed;
-  width: 450px;
-  height: 450px;
-  right: -180px;
-  bottom: -180px;
-  background: var(--secondary);
-  opacity: .08;
-  filter: blur(120px);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    right: -180px;
+    bottom: -180px;
+    background: var(--secondary);
+    opacity: 0.08;
+    filter: blur(100px);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
 }
 
-/* =====================================================
+/* ==============================
    NAVBAR
-===================================================== */
+============================== */
 
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: rgba(5,7,13,.80);
-  backdrop-filter: blur(15px);
-  border-bottom: 1px solid var(--border);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 72px;
+    z-index: 1000;
+
+    background: rgba(5,7,13,0.88);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid var(--border);
 }
 
 body.light header {
-  background: rgba(245,247,251,.85);
+    background: rgba(244,246,251,0.90);
 }
 
 nav {
-  max-width: 1150px;
-  margin: auto;
-  height: 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 25px;
+    max-width: 1150px;
+    height: 72px;
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: -1px;
+    font-size: 24px;
+    font-weight: 800;
 }
 
 .logo span {
-  color: var(--primary);
+    color: var(--primary);
 }
 
 .nav-links {
-  display: flex;
-  gap: 25px;
-  list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    list-style: none;
 }
 
 .nav-links a {
-  font-size: 13px;
-  color: var(--soft);
-  transition: .3s;
-  position: relative;
+    color: var(--muted);
+    font-size: 13px;
+    transition: 0.3s;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--primary);
+.nav-links a:hover {
+    color: var(--primary);
 }
 
-.nav-links a.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -8px;
-  height: 2px;
-  background: var(--primary);
-  border-radius: 5px;
+.nav-buttons {
+    display: flex;
+    gap: 8px;
 }
 
-/* =====================================================
-   NAV CONTROLS
-===================================================== */
+.nav-btn {
+    width: 42px;
+    height: 42px;
 
-.nav-controls {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-left: 15px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    background: var(--card);
+    color: var(--text);
+
+    cursor: pointer;
+    font-size: 18px;
+
+    transition: 0.3s;
 }
 
-.icon-btn {
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--border);
-  background: var(--card2);
-  color: var(--text);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: .3s;
+.nav-btn:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
-.icon-btn:hover {
-  border-color: var(--primary);
-  transform: translateY(-2px);
+/* ==============================
+   COLOR MENU
+============================== */
+
+.color-menu {
+    position: fixed;
+    top: 85px;
+    right: 20px;
+
+    width: 190px;
+    padding: 18px;
+
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    z-index: 999;
+
+    display: none;
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
 }
 
-.menu-btn {
-  display: none;
+.color-menu.show {
+    display: block;
 }
 
-/* =====================================================
+.color-menu h4 {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.colors {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.color {
+    width: 42px;
+    height: 42px;
+
+    border: 2px solid transparent;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.color:hover {
+    transform: scale(1.1);
+    border-color: white;
+}
+
+.c-default {
+    background: #6f7fff;
+}
+
+.c-blue {
+    background: #4f8cff;
+}
+
+.c-purple {
+    background: #a855f7;
+}
+
+.c-green {
+    background: #22c55e;
+}
+
+.c-orange {
+    background: #ff8a3d;
+}
+
+.c-red {
+    background: #ef4444;
+}
+
+/* ==============================
    HERO
-===================================================== */
+============================== */
 
 .hero {
-  min-height: 100vh;
-  max-width: 1150px;
-  margin: auto;
-  padding: 150px 25px 80px;
-  display: flex;
-  align-items: center;
+    min-height: 100vh;
+    max-width: 1150px;
+    margin: auto;
+
+    padding: 150px 25px 80px;
+
+    display: flex;
+    align-items: center;
 }
 
 .hero-content {
-  max-width: 850px;
+    max-width: 850px;
 }
 
-.eyebrow {
-  display: inline-block;
-  padding: 7px 14px;
-  border: 1px solid var(--primary);
-  background: color-mix(in srgb, var(--primary) 10%, transparent);
-  border-radius: 30px;
-  color: var(--primary);
-  font-size: 13px;
-  margin-bottom: 25px;
+.badge {
+    display: inline-block;
+
+    padding: 8px 15px;
+    margin-bottom: 25px;
+
+    border: 1px solid var(--primary);
+    border-radius: 30px;
+
+    color: var(--primary);
+    background: rgba(111,127,255,0.08);
+
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .hero h1 {
-  font-size: clamp(48px, 8vw, 85px);
-  line-height: 1;
-  letter-spacing: -4px;
-  margin-bottom: 22px;
+    font-size: clamp(48px,8vw,82px);
+    line-height: 1;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
 }
 
-.gradient-text {
-  background: linear-gradient(
-    90deg,
-    var(--primary),
-    var(--secondary)
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.gradient {
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .hero h2 {
-  font-size: clamp(20px, 3vw, 30px);
-  font-weight: 500;
-  color: var(--soft);
-  margin-bottom: 20px;
+    font-size: clamp(21px,3vw,30px);
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .hero p {
-  max-width: 680px;
-  color: var(--muted);
-  font-size: 17px;
-  margin-bottom: 35px;
+    max-width: 680px;
+
+    color: var(--muted);
+
+    font-size: 17px;
+
+    margin-bottom: 35px;
 }
 
-/* =====================================================
+/* ==============================
    BUTTONS
-===================================================== */
+============================== */
 
 .buttons {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
 }
 
 .btn {
-  padding: 13px 22px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  transition: .3s;
-  display: inline-block;
-  cursor: pointer;
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
 }
 
-.btn-primary {
-  background: var(--primary);
-  color: white;
-  box-shadow: 0 0 30px var(--glow);
+.primary {
+    background: var(--primary);
+    color: white;
+
+    box-shadow: 0 0 30px var(--glow);
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 35px var(--glow);
+.primary:hover {
+    transform: translateY(-3px);
 }
 
-.btn-secondary {
-  border: 1px solid var(--border);
-  color: var(--text);
+.secondary {
+    border: 1px solid var(--border);
+    color: var(--text);
+    background: transparent;
 }
 
-.btn-secondary:hover {
-  background: var(--card2);
-  border-color: var(--primary);
-  transform: translateY(-3px);
+.secondary:hover {
+    border-color: var(--primary);
+    background: var(--card2);
+    transform: translateY(-3px);
 }
 
-/* =====================================================
-   GENERAL
-===================================================== */
+/* ==============================
+   SECTIONS
+============================== */
 
 section {
-  max-width: 1150px;
-  margin: auto;
-  padding: 100px 25px;
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 25px;
 }
 
-.section-label {
-  color: var(--primary);
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-  font-weight: 700;
+.label {
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
 }
 
 .section-title {
-  font-size: 38px;
-  letter-spacing: -1.5px;
-  margin-bottom: 45px;
+    font-size: 38px;
+    letter-spacing: -1.5px;
+    margin-bottom: 45px;
 }
 
-/* =====================================================
+/* ==============================
    ABOUT
-===================================================== */
+============================== */
 
 .about-grid {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr;
-  gap: 50px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 50px;
 }
 
 .about-text p {
-  color: var(--muted);
-  margin-bottom: 18px;
-  font-size: 16px;
+    color: var(--muted);
+    margin-bottom: 18px;
+    font-size: 16px;
 }
 
 .info-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 28px;
-  transition: .3s;
+    padding: 28px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    transition: 0.3s;
 }
 
 .info-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-3px);
+    border-color: var(--primary);
+    transform: translateY(-4px);
 }
 
 .info-item {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
 }
 
 .info-item:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .info-item small {
-  display: block;
-  color: #747c91;
-  margin-bottom: 4px;
+    display: block;
+    color: #747c91;
+    margin-bottom: 4px;
 }
 
 .info-item strong {
-  color: var(--text);
+    color: var(--text);
 }
 
-/* =====================================================
+/* ==============================
    SKILLS
-===================================================== */
+============================== */
 
 .skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
 }
 
 .skill {
-  padding: 13px 18px;
-  background: var(--card2);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  color: var(--soft);
-  transition: .3s;
+    padding: 13px 18px;
+
+    background: var(--card2);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    color: var(--text);
+
+    transition: 0.3s;
 }
 
 .skill:hover {
-  border-color: var(--primary);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px var(--glow);
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px var(--glow);
 }
 
-/* =====================================================
+/* ==============================
    EDUCATION
-===================================================== */
+============================== */
 
 .timeline {
-  border-left: 2px solid var(--border);
-  padding-left: 30px;
+    border-left: 2px solid var(--border);
+    padding-left: 30px;
 }
 
 .timeline-card {
-  position: relative;
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 28px;
-  border-radius: 16px;
-  transition: .3s;
+    position: relative;
+
+    padding: 28px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    transition: 0.3s;
 }
 
 .timeline-card:hover {
-  border-color: var(--primary);
-  transform: translateX(5px);
+    border-color: var(--primary);
+    transform: translateX(5px);
 }
 
 .timeline-card::before {
-  content: "";
-  position: absolute;
-  left: -39px;
-  top: 30px;
-  width: 14px;
-  height: 14px;
-  background: var(--primary);
-  border-radius: 50%;
-  box-shadow: 0 0 15px var(--glow);
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    left: -39px;
+    top: 30px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    box-shadow: 0 0 20px var(--glow);
 }
 
 .timeline-card h3 {
-  font-size: 21px;
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
-.timeline-card .course {
-  color: var(--primary);
-  font-weight: 600;
+.course {
+    color: var(--primary);
+    font-weight: 600;
 }
 
 .timeline-card p {
-  color: var(--muted);
-  margin-top: 10px;
+    color: var(--muted);
+    margin-top: 10px;
 }
 
-/* =====================================================
+/* ==============================
    PROJECTS
-===================================================== */
+============================== */
 
 .project-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
 }
 
 .project-card {
-  position: relative;
-  overflow: hidden;
-  padding: 32px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  transition: .35s;
+    position: relative;
+
+    padding: 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    transition: 0.35s;
 }
 
-.project-card::before {
-  content: "";
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  top: -80px;
-  right: -80px;
-  background: var(--primary);
-  opacity: .12;
-  border-radius: 50%;
-  filter: blur(35px);
+.project-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -80px;
+    top: -80px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    opacity: 0.12;
+
+    filter: blur(30px);
 }
 
 .project-card:hover {
-  transform: translateY(-8px);
-  border-color: var(--primary);
-  box-shadow: 0 15px 40px var(--glow);
+    transform: translateY(-8px);
+
+    border-color: var(--primary);
+
+    box-shadow: 0 20px 50px var(--glow);
 }
 
 .project-number {
-  color: var(--primary);
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
 }
 
 .project-icon {
-  font-size: 35px;
-  margin-bottom: 15px;
+    font-size: 38px;
+    margin-bottom: 15px;
 }
 
 .project-card h3 {
-  font-size: 23px;
-  margin-bottom: 12px;
+    font-size: 22px;
+    margin-bottom: 12px;
 }
 
 .project-card p {
-  color: var(--muted);
-  margin-bottom: 20px;
+    color: var(--muted);
+    margin-bottom: 20px;
 }
 
-.project-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-.project-tag {
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 11px;
-  border: 1px solid var(--border);
-  color: var(--soft);
-  background: var(--card2);
+.tag {
+    padding: 6px 10px;
+
+    background: var(--card2);
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    font-size: 11px;
+    color: var(--muted);
 }
 
-/* =====================================================
+/* ==============================
    CERTIFICATION
-===================================================== */
+============================== */
 
-.certificate-card {
-  padding: 30px;
-  border-radius: 18px;
-  background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--primary) 10%, transparent),
-    color-mix(in srgb, var(--secondary) 5%, transparent)
-  );
-  border: 1px solid var(--border);
-  transition: .3s;
+.certificate {
+    padding: 30px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(111,127,255,0.10),
+        rgba(189,140,255,0.05)
+    );
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
+    transition: 0.3s;
 }
 
-.certificate-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--primary);
+.certificate:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
 }
 
-.certificate-card h3 {
-  margin-bottom: 8px;
+.certificate h3 {
+    margin-bottom: 8px;
 }
 
-.certificate-card p {
-  color: var(--muted);
+.certificate p {
+    color: var(--muted);
 }
 
-/* =====================================================
+/* ==============================
    ACTIVITIES
-===================================================== */
+============================== */
 
-.activity-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 25px;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  background: var(--card);
-  transition: .3s;
+.activity {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    transition: 0.3s;
 }
 
-.activity-card:hover {
-  border-color: var(--primary);
-  transform: translateY(-4px);
+.activity:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
 }
 
 .activity-icon {
-  font-size: 35px;
+    font-size: 40px;
 }
 
-.activity-card p {
-  color: var(--muted);
+.activity p {
+    color: var(--muted);
 }
 
-/* =====================================================
+/* ==============================
    CAREER
-===================================================== */
+============================== */
 
-.career-box {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 30px;
+.career {
+    padding: 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 18px;
 }
 
-.career-box p {
-  color: var(--muted);
+.career p {
+    color: var(--muted);
 }
 
-/* =====================================================
+/* ==============================
    CONTACT
-===================================================== */
+============================== */
 
 .contact-box {
-  text-align: center;
-  padding: 70px 30px;
-  border-radius: 25px;
-  background: var(--card);
-  border: 1px solid var(--border);
+    text-align: center;
+
+    padding: 70px 30px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+    border-radius: 25px;
 }
 
 .contact-box h2 {
-  font-size: 40px;
-  margin-bottom: 15px;
+    font-size: 40px;
+    margin-bottom: 15px;
 }
 
 .contact-box p {
-  color: var(--muted);
-  margin-bottom: 30px;
+    color: var(--muted);
+    margin-bottom: 30px;
 }
 
 .contact-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
-/* =====================================================
-   COLOR PANEL
-===================================================== */
-
-.color-panel {
-  position: fixed;
-  top: 90px;
-  right: -210px;
-  width: 190px;
-  padding: 18px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 16px 0 0 16px;
-  z-index: 999;
-  transition: .4s;
-  box-shadow: 0 10px 35px rgba(0,0,0,.3);
-}
-
-.color-panel.open {
-  right: 0;
-}
-
-.color-panel h4 {
-  margin-bottom: 14px;
-  font-size: 14px;
-}
-
-.color-options {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 10px;
-}
-
-.color-option {
-  height: 35px;
-  border-radius: 9px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: .25s;
-}
-
-.color-option:hover {
-  transform: scale(1.1);
-  border-color: white;
-}
-
-.blue {
-  background: #4f8cff;
-}
-
-.purple {
-  background: #a855f7;
-}
-
-.green {
-  background: #22c55e;
-}
-
-.orange {
-  background: #ff8a3d;
-}
-
-.red {
-  background: #ef4444;
-}
-
-.default {
-  background: #6f7fff;
-}
-
-/* =====================================================
-   SCROLL TOP
-===================================================== */
-
-#topBtn {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  background: var(--primary);
-  color: white;
-  cursor: pointer;
-  font-size: 18px;
-  opacity: 0;
-  pointer-events: none;
-  transition: .3s;
-  z-index: 900;
-}
-
-#topBtn.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* =====================================================
+/* ==============================
    FOOTER
-===================================================== */
+============================== */
 
 footer {
-  border-top: 1px solid var(--border);
-  text-align: center;
-  padding: 30px;
-  color: #697185;
-  font-size: 13px;
+    border-top: 1px solid var(--border);
+
+    text-align: center;
+
+    padding: 30px;
+
+    color: #697185;
+
+    font-size: 13px;
 }
 
-/* =====================================================
-   ANIMATION
-===================================================== */
+/* ==============================
+   TOP BUTTON
+============================== */
 
-.reveal {
-  opacity: 0;
-  transform: translateY(25px);
-  transition: all .7s ease;
+#topButton {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--primary);
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 900;
 }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+#topButton.show {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* =====================================================
+/* ==============================
    MOBILE
-===================================================== */
+============================== */
+
+.mobile-menu {
+    display: none;
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
 
 @media (max-width: 850px) {
 
-  .nav-links {
-    position: absolute;
-    top: 72px;
-    left: 0;
-    width: 100%;
-    background: var(--bg);
-    border-bottom: 1px solid var(--border);
-    display: none;
-    flex-direction: column;
-    padding: 20px 25px;
-    gap: 18px;
-  }
+    .nav-links {
+        position: absolute;
 
-  .nav-links.open {
-    display: flex;
-  }
+        top: 72px;
+        left: 0;
 
-  .menu-btn {
-    display: block;
-  }
+        width: 100%;
 
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
+        display: none;
 
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
+        flex-direction: column;
 
-  .nav-controls {
-    margin-left: auto;
-  }
+        align-items: flex-start;
 
-  .hero {
-    padding-top: 130px;
-  }
+        padding: 25px;
 
-  .hero h1 {
-    letter-spacing: -2px;
-  }
+        gap: 20px;
 
-  .section-title {
-    font-size: 32px;
-  }
+        background: var(--bg);
 
-  .contact-box h2 {
-    font-size: 30px;
-  }
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 130px;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .section-title {
+        font-size: 32px;
+    }
+
+    .contact-box h2 {
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 500px) {
 
-  nav {
-    padding: 0 15px;
-  }
+    nav {
+        padding: 0 16px;
+    }
 
-  .hero,
-  section {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
+    section,
+    .hero {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
 
-  .hero h1 {
-    font-size: 46px;
-  }
+    .hero h1 {
+        font-size: 45px;
+    }
 
-  .project-card {
-    padding: 25px;
-  }
+    .project-card {
+        padding: 25px;
+    }
 
-  .color-panel {
-    width: 175px;
-  }
+    .color-menu {
+        right: 10px;
+    }
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- =====================================================
+
+<!-- ==========================================
      NAVIGATION
-===================================================== -->
+========================================== -->
 
 <header>
 
@@ -889,27 +960,57 @@ Haris<span>.</span>
 
 <ul class="nav-links" id="navLinks">
 
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#education">Education</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#certifications">Certifications</a></li>
-<li><a href="#activities">Activities</a></li>
-<li><a href="#contact">Contact</a></li>
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#skills">Skills</a>
+</li>
+
+<li>
+<a href="#education">Education</a>
+</li>
+
+<li>
+<a href="#projects">Projects</a>
+</li>
+
+<li>
+<a href="#certifications">Certifications</a>
+</li>
+
+<li>
+<a href="#activities">Activities</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
 
 </ul>
 
-<div class="nav-controls">
 
-<button class="icon-btn" id="themeBtn" title="Dark / Light">
+<div class="nav-buttons">
+
+<button
+class="nav-btn"
+id="themeButton"
+title="Dark / Light Mode">
 ☀
 </button>
 
-<button class="icon-btn" id="colorBtn" title="Change Color">
+<button
+class="nav-btn"
+id="colorButton"
+title="Change Color">
 🎨
 </button>
 
-<button class="icon-btn menu-btn" id="menuBtn">
+<button
+class="nav-btn mobile-menu"
+id="menuButton"
+title="Menu">
 ☰
 </button>
 
@@ -920,61 +1021,70 @@ Haris<span>.</span>
 </header>
 
 
-<!-- =====================================================
-     COLOR PANEL
-===================================================== -->
+<!-- ==========================================
+     COLOR MENU
+========================================== -->
 
-<div class="color-panel" id="colorPanel">
+<div class="color-menu" id="colorMenu">
 
-<h4>Choose Theme</h4>
+<h4>Choose Your Color</h4>
 
-<div class="color-options">
+<div class="colors">
 
-<button class="color-option default"
-onclick="setColor('default')"
-title="Default"></button>
+<button
+class="color c-default"
+onclick="changeColor('default')">
+</button>
 
-<button class="color-option blue"
-onclick="setColor('blue')"
-title="Ocean Blue"></button>
+<button
+class="color c-blue"
+onclick="changeColor('blue')">
+</button>
 
-<button class="color-option purple"
-onclick="setColor('purple')"
-title="Royal Purple"></button>
+<button
+class="color c-purple"
+onclick="changeColor('purple')">
+</button>
 
-<button class="color-option green"
-onclick="setColor('green')"
-title="Emerald"></button>
+<button
+class="color c-green"
+onclick="changeColor('green')">
+</button>
 
-<button class="color-option orange"
-onclick="setColor('orange')"
-title="Sunset"></button>
+<button
+class="color c-orange"
+onclick="changeColor('orange')">
+</button>
 
-<button class="color-option red"
-onclick="setColor('red')"
-title="Crimson"></button>
+<button
+class="color c-red"
+onclick="changeColor('red')">
+</button>
 
 </div>
 
 </div>
 
 
-<!-- =====================================================
+<!-- ==========================================
      HERO
-===================================================== -->
+========================================== -->
 
 <main>
 
 <section class="hero">
 
-<div class="hero-content reveal">
+<div class="hero-content">
 
-<div class="eyebrow">
+<div class="badge">
 Computer Science & Business Systems Student
 </div>
 
 <h1>
-Hi, I'm <span class="gradient-text">Haris Mohamed.</span>
+Hi, I'm
+<span class="gradient">
+Haris Mohamed.
+</span>
 </h1>
 
 <h2>
@@ -982,9 +1092,9 @@ Aspiring Software Developer
 </h2>
 
 <p>
-Computer Science and Business Systems student passionate about
-learning technology, developing practical skills, and building
-a strong foundation for a career in software development.
+Computer Science and Business Systems student passionate
+about technology, programming, practical projects and
+continuous learning.
 </p>
 
 <div class="buttons">
@@ -993,7 +1103,7 @@ a strong foundation for a career in software development.
 href="https://www.linkedin.com/in/haris-mohamed-76155237b"
 target="_blank"
 rel="noopener noreferrer"
-class="btn btn-primary">
+class="btn primary">
 LinkedIn
 </a>
 
@@ -1001,13 +1111,13 @@ LinkedIn
 href="https://github.com/shahulharis05-ctrl"
 target="_blank"
 rel="noopener noreferrer"
-class="btn btn-secondary">
+class="btn secondary">
 GitHub
 </a>
 
 <a
 href="mailto:shahulharis05@gmail.com"
-class="btn btn-secondary">
+class="btn secondary">
 Contact Me
 </a>
 
@@ -1018,13 +1128,15 @@ Contact Me
 </section>
 
 
-<!-- =====================================================
+<!-- ==========================================
      ABOUT
-===================================================== -->
+========================================== -->
 
-<section id="about" class="reveal">
+<section id="about">
 
-<div class="section-label">01 — About</div>
+<div class="label">
+01 — About
+</div>
 
 <h2 class="section-title">
 About Me
@@ -1036,23 +1148,24 @@ About Me
 
 <p>
 I am a Computer Science and Business Systems student at
-Aalim Muhammed Salegh College of Engineering, currently
-pursuing my degree from 2024 to 2028.
+Aalim Muhammed Salegh College of Engineering, pursuing
+my degree from 2024 to 2028.
 </p>
 
 <p>
-I am interested in technology and computer science, and I
-continuously work on developing my technical knowledge and
-practical skills.
+I am interested in technology and computer science and
+continuously work on improving my technical knowledge
+and practical skills.
 </p>
 
 <p>
 I have experience learning Python programming and enjoy
-participating in extracurricular activities such as basketball.
+participating in extracurricular activities such as
+basketball.
 </p>
 
 <p>
-My goal is to continue learning, gain practical experience,
+My goal is to continue learning, gain practical experience
 and grow toward a career in software development.
 </p>
 
@@ -1062,23 +1175,43 @@ and grow toward a career in software development.
 <div class="info-card">
 
 <div class="info-item">
+
 <small>Education</small>
-<strong>Aalim Muhammed Salegh College of Engineering</strong>
+
+<strong>
+Aalim Muhammed Salegh College of Engineering
+</strong>
+
 </div>
 
 <div class="info-item">
+
 <small>Program</small>
-<strong>Computer Science & Business Systems</strong>
+
+<strong>
+Computer Science & Business Systems
+</strong>
+
 </div>
 
 <div class="info-item">
+
 <small>Duration</small>
-<strong>2024 – 2028</strong>
+
+<strong>
+2024 – 2028
+</strong>
+
 </div>
 
 <div class="info-item">
+
 <small>Location</small>
-<strong>Chennai, Tamil Nadu, India</strong>
+
+<strong>
+Chennai, Tamil Nadu, India
+</strong>
+
 </div>
 
 </div>
@@ -1088,13 +1221,15 @@ and grow toward a career in software development.
 </section>
 
 
-<!-- =====================================================
+<!-- ==========================================
      SKILLS
-===================================================== -->
+========================================== -->
 
-<section id="skills" class="reveal">
+<section id="skills">
 
-<div class="section-label">02 — Skills</div>
+<div class="label">
+02 — Skills
+</div>
 
 <h2 class="section-title">
 Technical Skills
@@ -1102,28 +1237,36 @@ Technical Skills
 
 <div class="skills">
 
-<div class="skill">Python</div>
-<div class="skill">Problem Solving</div>
-<div class="skill">Programming Basics</div>
-<div class="skill">GitHub</div>
-
+<div class="skill">
+Python
 </div>
 
-<p style="margin-top:25px;color:var(--muted);font-size:14px;">
-More technical skills will be added as I continue learning
-and building projects.
-</p>
+<div class="skill">
+Problem Solving
+</div>
+
+<div class="skill">
+Programming Basics
+</div>
+
+<div class="skill">
+GitHub
+</div>
+
+</div>
 
 </section>
 
 
-<!-- =====================================================
+<!-- ==========================================
      EDUCATION
-===================================================== -->
+========================================== -->
 
-<section id="education" class="reveal">
+<section id="education">
 
-<div class="section-label">03 — Education</div>
+<div class="label">
+03 — Education
+</div>
 
 <h2 class="section-title">
 Education
@@ -1152,4 +1295,103 @@ Computer Science and Business Systems
 </section>
 
 
-<!-- =================================
+<!-- ==========================================
+     PROJECTS
+========================================== -->
+
+<section id="projects">
+
+<div class="label">
+04 — Projects
+</div>
+
+<h2 class="section-title">
+Featured Projects
+</h2>
+
+<div class="project-grid">
+
+
+<!-- PROJECT ONE -->
+
+<div class="project-card">
+
+<div class="project-number">
+PROJECT 01
+</div>
+
+<div class="project-icon">
+🖐️
+</div>
+
+<h3>
+Hand Gesture Recognition
+</h3>
+
+<p>
+A computer interaction concept where hand movements
+can be used to operate the computer or screen through
+a monitor camera without physically touching the screen.
+</p>
+
+<div class="tags">
+
+<span class="tag">
+Computer Vision
+</span>
+
+<span class="tag">
+Gesture Interaction
+</span>
+
+<span class="tag">
+Camera
+</span>
+
+</div>
+
+</div>
+
+
+<!-- PROJECT TWO -->
+
+<div class="project-card">
+
+<div class="project-number">
+PROJECT 02
+</div>
+
+<div class="project-icon">
+🧾
+</div>
+
+<h3>
+Smart Billing
+</h3>
+
+<p>
+A smart billing concept exploring voice recognition
+and photos or images to support a more convenient
+billing process.
+</p>
+
+<div class="tags">
+
+<span class="tag">
+Voice Recognition
+</span>
+
+<span class="tag">
+Image Input
+</span>
+
+<span class="tag">
+Billing
+</span>
+
+</div>
+
+</div>
+
+
+<!-- GI
